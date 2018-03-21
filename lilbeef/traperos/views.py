@@ -10,7 +10,7 @@ def index(request):
     #latest_question_list = Question.objects.order_by('-pub_date')[:5]
     #context = {'latest_question_list': latest_question_list}
     context = {}
-    return render(request, 'base.html', context)
+    return render(request, 'index/index.html', context)
 
 
 def traperos_lista(request):
