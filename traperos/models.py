@@ -51,7 +51,8 @@ class Tiraera(models.Model):
 
 
 class Alerta(models.Model):
-    """Model para recibir alertas de usuarios a través del formulario"""
+    """Modelo para recibir alertas de usuarios a traves del formulario."""
+
     titulo = models.CharField(max_length=250)
     fecha_alerta = models.DateField(auto_now_add=True)
     descripcion = models.TextField()

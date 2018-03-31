@@ -1,19 +1,18 @@
-'''
- Este fichero no es por defecto de Django, pero nos ayuda a separar el routing por aplicaciones que conforman
- un proyecto.
+"""
+Fichero para separar routing por aplicacionesun proyecto.
 
- De modo que definimos para esta app las rutas que son exclusivamente suyas y luego las importamos en el router
- principal del proyecto
-'''
+De modo que definimos para esta app las rutas que son exclusivamente suyas y luego las importamos en el router
+principal del proyecto.
+"""
 
 from django.urls import path
 from traperos import views
 
 urlpatterns = [
-    path('', views.index),
+    path('', views.index, name='index'),
+    path('respuesta/', views.respuesta_simple, name='respuesta'),
     path('traperos/', views.traperos_lista, name='traperos'),
     path('traperos/<int:trapero_id>', views.traperos_id, name='trapero_id'),
-    #path('discos/', views.disco_lista, name='discos'),
     path('discos/', views.DiscoListView.as_view(), name='discos'),
     path('discos/<int:pk>', views.DiscoDetailView.as_view(), name='disco_id'),
     path('tiraeras/', views.tiraeras_lista, name='tiraeras'),

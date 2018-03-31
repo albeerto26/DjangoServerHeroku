@@ -31,7 +31,7 @@ def index(request):
 
 def traperos_lista(request):
     """Listado de traperos."""
-    listado_todos_traperos = Trapero.objects.all()
+    listado_todos_traperos = Trapero.objects.all().order_by('?')
     context = {'listado_todos_traperos': listado_todos_traperos}
     return render(request, 'traperos/listado_todos_traperos.html', context)
 
@@ -44,7 +44,8 @@ def traperos_id(request, trapero_id):
 
 
 class DiscoListView(ListView):
-    """ListView Disco"""
+    """ListView Disco."""
+
     model = Disco
     template_name = 'discos/listado_todos_discos.html'  # Default: <app_label>/<model_name>_list.html
     context_object_name = 'listado_todos_discos'  # Default: object_list
@@ -53,7 +54,8 @@ class DiscoListView(ListView):
 
 
 class DiscoDetailView(DetailView):
-    """DetailView Disco"""
+    """DetailView Disco."""
+
     model = Disco
     template_name = 'discos/unico_disco.html'  # Default: <app_label>/<model_name>_list.html
     context_object_name = 'unico_disco'  # Default: object_list
@@ -80,7 +82,8 @@ def tiraeras_trapero(request, trapero_id):
 
 
 class AlertaCreate(CreateView):
-    """Vista de creacion de Alertas"""
+    """Vista de creacion de Alertas."""
+
     model = Alerta
     template_name = 'alertas/alertas_form.html'
     success_url = '/alertas/gracias'
@@ -88,5 +91,6 @@ class AlertaCreate(CreateView):
 
 
 class AlertaGraciasView(TemplateView):
-    """Vista de agradecimiento por envio de Alertas"""
+    """Vista de agradecimiento por envio de Alertas."""
+
     template_name = 'alertas/alertas_gracias.html'
