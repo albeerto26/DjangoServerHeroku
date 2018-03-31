@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+
+  {% include "index/masthead.html" %}
+
+  <div class="ui container">
+    <div class="ui special cards">
+      {% for disco in listado_todos_discos %}
+        <div class="card">
+          <div class="blurring dimmable image">
+            <div class="ui dimmer">
+              <div class="content">
+                <div class="center">
+                  <a href="{% url 'disco_id' disco.id %}"><div class="ui inverted button">Ver Disco</div></a>
+                </div>
+              </div>
+            </div>
+            <img class="trapero" src="{{ disco.portada.url }}"></img>
+          </div>
+          <div class="content">
+            <a href="{% url 'trapero_id' disco.trapero.id %}" class="header">{{ disco.trapero.aka }}</a>
+            <div class="meta">
+              <span class="date">Título: {{ disco.nombre }}</span>
+            </div>
+          </div>
+        </div>
+      {% empty%}
+        <h2>No hay discos disponibles</h2>
+      {% endfor %}
+    </div>
+
+    {% if is_paginated %}
+      <div class="ui pagination menu">
+        {% if page_obj.has_previous %}
+          <a class="item" href="?page={{ page_obj.previous_page_number }}">&laquo;</a>
+        {% else %}
+          <a class="item disabled">&laquo;</a>
+        {% endif %}
+
+        {% for i in paginator.page_range %}
+          {% if page_obj.number == i %}
+            <a class="item active">{{ i }}</a>
+          {% else %}
+            <a class="item" href="?page={{ i }}">{{ i }}</a>
+          {% endif %}
+        {% endfor %}
+
+        {% if page_obj.has_next %}
+          <a class="item" href="?page={{ page_obj.next_page_number }}">&raquo;</a>
+        {% else %}
+          <a class="item disabled">&raquo;</a>
+        {% endif %}
+      </div>
+    {% endif %}
+
+  </div>
+
+
+{% endblock %}

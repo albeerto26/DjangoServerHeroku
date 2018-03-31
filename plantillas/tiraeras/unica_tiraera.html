@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+
+  {% include "index/masthead.html" %}
+
+  <div class="ui segment">
+    <div class="ui feed">
+      <div class="event">
+        <div class="label">
+          <img src="{{ tiraera.trapero_tira.foto.url }}">
+        </div>
+        <div class="content">
+          <div class="summary">
+            <a href="{% url 'trapero_id' unica_tiraera.trapero_tira.id %}" class="user">
+              {{ unica_tiraera.trapero_tira.aka }}
+            </a> Ha comenzado una tiraera
+            <a href="{% url 'trapero_id' unica_tiraera.trapero_recibe.id %}" class="user">
+              {{ unica_tiraera.trapero_recibe.aka }}
+            </a> Ha comenzado una tiraera
+            <div class="date">
+              {{ unica_tiraera.fecha_inicio }}
+            </div>
+            <div class="extra text">
+              {{ unica_tiraera.titulo }}
+            </div>
+            <div class="extra text">
+              {{ unica_tiraera.descripcion }}
+            </div>
+          </div>
+        </div>
+        <div class="label">
+          <img src="{{ unica_tiraera.trapero_recibe.foto.url }}">
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

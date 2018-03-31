@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+
+  {% include "index/masthead.html" %}
+  
+  <div class="ui segment">
+      <div class="ui centered card">
+        <div class="blurring dimmable image">
+          <div class="ui dimmer">
+            <div class="content">
+              <div class="center">
+                <div class="ui inverted button">Ver Tirearas</div>
+              </div>
+            </div>
+          </div>
+          <img class="trapero" src="{{ unico_trapero.foto.url }}"></img>
+        </div>
+        <div class="content">
+          <a class="header">{{ unico_trapero.aka }}</a>
+          <div class="meta">
+            <span class="date">Nombre: {{ unico_trapero.nombre_real }}</span>
+          </div>
+          <div class="meta">
+            <span class="date">Edad: {{ unico_trapero.edad }}</span>
+          </div>
+        </div>
+        <div class="extra content">
+          <a>
+            <i class="users icon"></i>
+            {{ unico_trapero.disco_trapero.all|length }} Discos lanzados
+          </a>
+        </div>
+        <div class="extra content">
+          {% for disco in unico_trapero.disco_trapero.all %}
+            <a href="{% url 'disco_id' disco.id %}">{{ disco.nombre }}</a><br />
+          {% empty %}
+            Sin discos lanzados todavía
+          {% endfor %}
+        </div>
+      </div>
+  </div>
+
+{% endblock %}

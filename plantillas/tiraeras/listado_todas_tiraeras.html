@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+
+  {% include "index/masthead.html" %}
+
+  {% for tiraera in listado_todas_tiraeras %}
+    <div class="ui segment">
+      <div class="ui feed">
+        <div class="event">
+          <div class="label">
+            <img src="{{ tiraera.trapero_tira.foto.url }}">
+          </div>
+          <div class="content">
+            <div class="summary">
+              <a href="{% url 'trapero_id' tiraera.trapero_tira.id %}" class="user">
+                {{ tiraera.trapero_tira.aka }}
+              </a> Ha comenzado una tiraera
+              <a href="{% url 'trapero_id' tiraera.trapero_recibe.id %}" class="user">
+                {{ tiraera.trapero_recibe.aka }}
+              </a> Ha comenzado una tiraera
+              <div class="date">
+                {{ tiraera.fecha_inicio }}
+              </div>
+              <div class="extra text">
+                {{ tiraera.titulo }} <a href={% url 'tiraera_id' tiraera.id %}>  Ver más   </a>
+              </div>
+            </div>
+          </div>
+          <div class="label">
+            <img src="{{ tiraera.trapero_recibe.foto.url }}">
+          </div>
+        </div>
+      </div>
+    </div>
+  {% empty %}
+    <h2>No hay tiraeras comenzadas por este trapero</h2>
+  {% endfor %}
+
+{% endblock %}
