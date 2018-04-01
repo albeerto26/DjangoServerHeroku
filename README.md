@@ -2,8 +2,12 @@
  
  ## Proyecto de ejemplo para introducción a Django Framework
  
+ ### Creación del VirtualEnv
+ virtualenv --python=python3 ./lilbeef
+ 
  ### Descarga del proyecto
  
+ cd lilbeef
  git clone https://civan@bitbucket.org/civan/lilbeef.git
  
  ### Activación del entorno de trabajo
@@ -19,8 +23,7 @@
  ### Arrancar servidor de desarrollo
  
  cd lilbeef
- 
- ./manage.py runserver
+  ./manage.py runserver
  
  
  ### Ver aplicación en la siguiente URL
