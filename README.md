@@ -35,5 +35,5 @@
  
 [ Abrir aplicación demo Lil Beef ](http://127.0.0.1:8000/) 
 
-[ Abrir aplicación demo Lil Beef ](http://127.0.0.1:8000/admin/) user: admin pass: adminadmin
+[ Abrir panel de administración demo Lil Beef ](http://127.0.0.1:8000/admin/) user: admin pass: adminadmin
 
