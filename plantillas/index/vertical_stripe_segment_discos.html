@@ -7,8 +7,10 @@
       <div class="eight wide column">
 
         {% for disco in discos %}
-          <h3 class="ui header"><a href="{% url 'disco_id' disco.id %}">{{ disco.nombre }}</a></h3>
-          <p>Artista: <a href="{% url 'trapero_id' disco.trapero.id %}">{{ disco.trapero.aka }}</a></p>
+          <h3 class="ui header"><a href="{% url 'disco_id' disco.pk %}">{{ disco.nombre }}</a></h3>
+          {% for trapero in disco.trapero.all %}
+            <p>Artista: <a href="{% url 'trapero_id' trapero.pk %}">{{ trapero.aka }}</a></p>
+          {% endfor %}
           <p>Fecha lanzamiento: {{ disco.fecha_publicacion }}</p>
           <!-- <p>Fecha lanzamiento: {{ disco.fecha_publicacion|date:"d/m/Y" }}</p> -->
           <a href="{% url 'disco_id' disco.id %}"><img class="trapero" src="{{ disco.portada.url }}" width="100px"></img></a>

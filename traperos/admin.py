@@ -16,8 +16,8 @@ class TraperoAdmin(admin.ModelAdmin):
 class DiscoAdmin(admin.ModelAdmin):
     """Definicion de panel admin para modulo Disco."""
 
-    list_display = ('nombre', 'fecha_publicacion', 'portada', 'trapero', )
-    list_filter = ('nombre', 'fecha_publicacion', 'portada', 'trapero', )
+    list_display = ('nombre', 'fecha_publicacion', 'portada', )
+    list_filter = ('nombre', 'fecha_publicacion', 'portada', )
     search_fields = ('nombre', 'trapero__aka')
 
 
@@ -31,7 +31,7 @@ class TiraeraAdmin(admin.ModelAdmin):
 
 class AlertaAdmin(admin.ModelAdmin):
     """Definicion de panel admin para modulo Alerta."""
-    
+
     list_display = ('titulo', 'fecha_alerta', 'trapero')
     list_filter = ('titulo', 'fecha_alerta', 'trapero')
     search_fields = ('titulo', 'trapero__aka', )

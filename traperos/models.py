@@ -29,11 +29,11 @@ class Disco(models.Model):
     nombre = models.CharField(max_length=250)
     fecha_publicacion = models.DateField()
     portada = models.FileField(upload_to='portadas/', default='img/disco.jpg')
-    trapero = models.ForeignKey('Trapero', on_delete=models.CASCADE, related_name='disco_trapero')
+    trapero = models.ManyToManyField('Trapero', related_name='disco_trapero')
 
     def __str__(self):
         """Conversion de objeto a cadena humana."""
-        return '{0} - {1}'.format(self.nombre, self.trapero.aka)
+        return '{0}'.format(self.nombre)
 
 
 class Tiraera(models.Model):
@@ -43,7 +43,7 @@ class Tiraera(models.Model):
     fecha_inicio = models.DateField()
     descripcion = models.TextField()
     trapero_tira = models.ForeignKey('Trapero', on_delete=models.CASCADE, related_name='trapero_tirador')
-    trapero_recibe = models.ForeignKey('Trapero', on_delete=models.CASCADE, related_name='trapero_recibor')
+    trapero_recibe = models.ForeignKey('Trapero', on_delete=models.CASCADE, related_name='trapero_recibidor')
 
     def __str__(self):
         """Conversion de objeto a cadena humana."""

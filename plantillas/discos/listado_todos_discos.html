@@ -19,7 +19,9 @@
             <img class="trapero" src="{{ disco.portada.url }}"></img>
           </div>
           <div class="content">
-            <a href="{% url 'trapero_id' disco.trapero.id %}" class="header">{{ disco.trapero.aka }}</a>
+            {% for trapero in disco.trapero.all %}
+              <p>Artista: <a href="{% url 'trapero_id' trapero.pk %}">{{ trapero.aka }}</a></p>
+            {% endfor %}
             <div class="meta">
               <span class="date">Título: {{ disco.nombre }}</span>
             </div>
