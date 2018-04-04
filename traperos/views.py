@@ -94,3 +94,9 @@ class AlertaGraciasView(TemplateView):
     """Vista de agradecimiento por envio de Alertas."""
 
     template_name = 'alertas/alertas_gracias.html'
+
+
+class FinView(TemplateView):
+    """Vista de agradecimiento por envio de Alertas."""
+
+    template_name = 'fin.html'

@@ -20,4 +20,5 @@ urlpatterns = [
     path('tiraeras_trapero/<int:trapero_id>', views.tiraeras_trapero, name='tiraeras_trapero'),
     path('alertas/', views.AlertaCreate.as_view(), name='alertas'),
     path('alertas/gracias/', views.AlertaGraciasView.as_view(), name='alertas'),
+    path('fin/', views.FinView.as_view(), name='fin'),
 ]

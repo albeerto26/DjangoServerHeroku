@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block 'content' %}
+
+    {% include "index/masthead.html" %}
+
+    <div class="ui center aligned segment">
+      <img class="ui centered large image" src="{% static 'img/dub.gif' %}">
+      <h2>Gracias a todos por asistir</h2>
+    </div>
+
+{% endblock %}
