@@ -16,7 +16,8 @@
  ### Activación del entorno de trabajo
   
  cd lilbeef
- source bin/env
+ 
+ source bin/activate
  
  
  ### Instalación de dependencias Python en el virtualenv
