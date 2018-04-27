@@ -1,1 +1,2 @@
-web: ./manage.py runserver
+web: gunicorn lilbeef.wsgi
+

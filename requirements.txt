@@ -1,2 +1,2 @@
-Django==2.0.3
+django-heroku
 pytz==2018.3
