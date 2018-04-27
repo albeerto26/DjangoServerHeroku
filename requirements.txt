@@ -1,2 +1,0 @@
-django-heroku
-pytz==2018.3
