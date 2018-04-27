@@ -134,3 +134,5 @@ STATICFILES_DIRS = [
 
 # Ruta URL para peticiones a ficheros media de usuario
 MEDIA_URL = '/media/'
+
+django_heroku.settings(locals())
