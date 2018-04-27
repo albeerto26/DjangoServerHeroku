@@ -100,3 +100,7 @@ class FinView(TemplateView):
     """Vista de agradecimiento por envio de Alertas."""
 
     template_name = 'fin.html'
+
+
+class TextView(TemplateView):
+    template_name = 'prueba.html'

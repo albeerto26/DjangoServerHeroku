@@ -21,4 +21,5 @@ urlpatterns = [
     path('alertas/', views.AlertaCreate.as_view(), name='alertas'),
     path('alertas/gracias/', views.AlertaGraciasView.as_view(), name='alertas'),
     path('fin/', views.FinView.as_view(), name='fin'),
+    path('prueba/', views.TextView.as_view(), name='a')
 ]
